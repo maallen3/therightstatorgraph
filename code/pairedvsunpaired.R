@@ -5,16 +5,15 @@ library(ggplot2)
 
 #If you want to read it from google sheets use this line.
 #But using this line requires you to sign into google.
-weightsdf=read_sheet("https://docs.google.com/spreadsheets/d/1shSRN1rfqWZu7ld4G8d2uME7OvtLLwhmoZZBFVjds84/edit?gid=0#gid=0")
+#weightsdf=read_sheet("https://docs.google.com/spreadsheets/d/1shSRN1rfqWZu7ld4G8d2uME7OvtLLwhmoZZBFVjds84/edit?gid=0#gid=0")
 
 #Alternativly, if you don't want to link to google,
 #you can uncomment the lines below to build weightdf from scratch. 
 
-#person = c("Bob1","Bob2","Bob3","Bob4","Bob5","Bob6")
-#before = c("200","205","195","250","300","150")
-#after = c("196","202","193","248","290","149")
-#weightsdf <- as.data.frame(cbind(person, before, after))
-
+person = c("Bob1","Bob2","Bob3","Bob4","Bob5","Bob6")
+before = c(200,205,195,250,300,150)
+after = c(196,202,193,248,290,149)
+weightsdf <- data.frame(person, before, after)
 
 weightsdf$diff <- weightsdf$after-weightsdf$before
 weightsdf$diff2 <- weightsdf$before-weightsdf$after
